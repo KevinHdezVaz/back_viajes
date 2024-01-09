@@ -32,3 +32,4 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/user/{id}', [UserController::class, 'show']);
 Route::middleware('auth:sanctum')->get('/user-reservations', [ReservationController::class, 'getUserReservations']);
+Route::get('/obtener-reservaciones', [ReservacionesController::class, 'obtenerReservaciones']);

@@ -21,7 +21,7 @@ class ReservationController extends Controller
         'travel_date' => $request->input('travel_date'),
         'number_of_passengers' => $request->input('number_of_passengers'),
         'package' => $request->input('package'),
-        'hotel' => $request->input('selectedHotel'),
+        'selectedHotel' => $request->input('selectedHotel'),
         'total' => $request->input('total'),
         'costExtra' => $request->input('costExtra', []), // Usa un valor por defecto de array vacío si no se proporciona.
         'nombre' => $request->input('nombre'),  
@@ -36,7 +36,11 @@ class ReservationController extends Controller
 }
 
 
-
+public function obtenerReservaciones()
+{
+    $reservaciones = Reservation::all();
+    return response()->json($reservaciones);
+}
 
     public function getUserReservations()
     {
